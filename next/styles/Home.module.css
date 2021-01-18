@@ -1,0 +1,33 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lqip__photo {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  background: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.full__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 1s ease-in;
+}
