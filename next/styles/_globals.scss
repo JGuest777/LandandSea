@@ -1,48 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 html {
-  font-size: 100%;
-  box-sizing: border-box;
+	font-size: 100%;
+	box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  line-height: 1rem;
-  letter-spacing: 0.05rem;
-  font-family: 'Roboto', sans-serif;
-  font-size: $font-med;
+	margin: 0;
+	padding: 0;
+	line-height: 1rem;
+	letter-spacing: 0.05rem;
+	font-family: 'Roboto', sans-serif;
+	font-size: $font-med;
 }
 
 a,
 a:visited,
 a:hover {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 // Visibility
 .hide-mobile {
-  @include breakpoint-down(medium) {
-    display: none;
-  }
+	@include breakpoint-down(medium) {
+		display: none;
+	}
 }
 
 .hide-desktop {
-  @include breakpoint-up(large) {
-    display: none;
-  }
+	@include breakpoint-up(large) {
+		display: none;
+	}
 }
 
 // 640px, 1024px, 1400px
 @media (max-width: 640px) {
-  html {
-    font-size: 75%;
-  }
+	html {
+		font-size: 115%;
+	}
+}
+
+@media (max-width: 1024px) {
+	html {
+		font-size: 105%;
+	}
 }
