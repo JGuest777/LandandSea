@@ -1,79 +1,93 @@
 .header {
-	background-color: rgba(255, 255, 255, 0.15);
-	backdrop-filter: blur(5px);
-	nav {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		padding: 0.5rem 7% 1rem 7%;
-	}
-	&__logo {
-		img {
-		}
-	}
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0.5rem 7% 1rem 7%;
+  }
+  &__logo {
+    img {
+    }
+  }
 
-	&__menu {
-		> span {
-			display: block;
-			height: 2px;
-			width: 26px;
-			background-color: black;
+  &__burger-link {
+    transition: all ease-in-out 200ms;
+    > span {
+      display: block;
+      height: 2px;
+      width: 26px;
+      background-color: black;
+      transition: all 260ms ease-in-out;
+      transform-origin: 3px 1.5px;
 
-			&:not(:last-child) {
-				margin-bottom: 5px;
-			}
-		}
-	}
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+    &.open {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+    }
+  }
 
-	&__submenu {
-		position: absolute;
-		top: 0;
-		right: 0;
-		padding-top: 0.65rem;
-		margin-right: 3.5%;
-	}
+  &__submenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 0.65rem;
+    margin-right: 2.7%;
+  }
 
-	&__submenu-mobile {
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		&:hover {
-			color: $logoBlue;
-			cursor: pointer;
-		}
-	}
+  &__submenu-mobile {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-	&__submenu-desktop {
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		&:hover {
-			color: $logoBlue;
-			cursor: pointer;
-		}
-	}
+  &__submenu-desktop {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      color: $logoBlue;
+      cursor: pointer;
+    }
+  }
 
-	&__links {
-		a {
-			font-size: $font-lg;
-			transition: all 200ms ease-in-out;
+  &__links {
+    a {
+      font-size: $font-lg;
+      transition: all 200ms ease-in-out;
 
-			&:not(:last-child) {
-				margin-right: 4rem;
-			}
-			&:hover {
-				color: $logoBlue;
-			}
-		}
-	}
+      &:not(:last-child) {
+        margin-right: 4rem;
+      }
+      &:hover {
+        color: $logoBlue;
+      }
+    }
+  }
 
-	&__icons {
-		margin: 0 1rem;
-		transition: all 200ms ease-in-out;
+  &__icons {
+    margin: 0 1rem;
+    transition: all 200ms ease-in-out;
 
-		&:hover {
-			cursor: pointer;
-			color: $logoBlue;
-		}
-	}
+    &:hover {
+      cursor: pointer;
+      color: $logoBlue;
+    }
+  }
 }
