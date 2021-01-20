@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 html,
-body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
+body,
 div {
 	margin: 0;
 	padding: 0;
@@ -18,6 +13,7 @@ html {
 }
 
 body {
+	// position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -39,32 +35,60 @@ a:hover {
 	text-decoration: none;
 	color: inherit;
 }
-
+// Sticky footer = absolute
 .content {
 	min-height: calc(100vh - 200px);
 }
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .container {
-	min-height: 100vh;
-	position: relative;
+	min-height: 100vh; //need for scroll
 }
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .overlay {
+	visibility: hidden;
 	position: fixed;
 	top: 0;
-	right: 0;
-	bottom: 0;
 	left: 0;
-	background-image: linear-gradient(blue, transparent);
-	animation: fade-in 200ms ease-in-out forwards;
+	height: 100%;
+	width: 100%;
+	// z-index: 10;
+	background-image: linear-gradient($logoBlue, transparent);
+}
+
+.fade-in {
+	animation: fade-in 250ms ease-in-out forwards;
+}
+
+.fade-out {
+	animation: fade-out 250ms ease-in-out forwards;
 }
 
 @keyframes fade-in {
 	from {
+		visibility: hidden;
 		opacity: 0;
 	}
+	1% {
+		visibility: visible;
+		opacity: 0;
+	}
+
 	to {
+		visibility: visible;
 		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	from {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	to {
+		visibility: hidden;
+		opacity: 0;
 	}
 }
 

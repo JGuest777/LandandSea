@@ -5,15 +5,18 @@ import { useState } from 'react'
 export default function MainLayout({ children }) {
 	const [toggleOverlay, setToggleOverlay] = useState(false)
 	return (
-		<div className={`container ${toggleOverlay ? 'fade-in' : 'fade-out'}`}>
-			<div className='content'>
-				<Header
-					toggleOverlay={toggleOverlay}
-					setToggleOverlay={setToggleOverlay}
-				/>
-				<div>{children}</div>
+		<>
+			<div className={`${toggleOverlay ? 'fade-in' : 'fade-out'} overlay`} />
+			<div className='container'>
+				<div className='content'>
+					<Header
+						toggleOverlay={toggleOverlay}
+						setToggleOverlay={setToggleOverlay}
+					/>
+					<div>{children}</div>
+				</div>
+				<Footer />
 			</div>
-			<Footer />
-		</div>
+		</>
 	)
 }
