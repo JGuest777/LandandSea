@@ -47,6 +47,7 @@ a:hover {
 
 .overlay {
 	visibility: hidden;
+	opacity: 0;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -66,11 +67,6 @@ a:hover {
 
 @keyframes fade-in {
 	from {
-		visibility: hidden;
-		opacity: 0;
-	}
-	1% {
-		visibility: visible;
 		opacity: 0;
 	}
 
@@ -87,7 +83,6 @@ a:hover {
 	}
 
 	to {
-		visibility: hidden;
 		opacity: 0;
 	}
 }
