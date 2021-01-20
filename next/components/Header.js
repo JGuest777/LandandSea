@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // TODO: Direct link to: Phone / Email (icons)
 
 export default function Header({ toggleOverlay, setToggleOverlay }) {
-	const tabs = ['About', 'Buy', 'Sell', 'Contact']
+	const links = ['About', 'Buy', 'Sell', 'Contact']
 	const [toggleMenu, setToggleMenu] = useState(false)
 
 	const handleToggleMenu = () => {
@@ -57,13 +57,24 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 				</div>
 				{/* Desktop */}
 				<div className='header__links hide-mobile'>
-					{tabs.map((tab, index) => (
-						<Link href={`/${tab.toLowerCase()}`} key={index}>
-							<a>{tab}</a>
+					{links.map((link, index) => (
+						<Link href={`/${link.toLowerCase()}`} key={index}>
+							<a>{link}</a>
 						</Link>
 					))}
 				</div>
 			</nav>
+			<div
+				className={`header__menu hide-desktop ${
+					toggleMenu ? 'fade-in' : 'fade-out'
+				}`}
+			>
+				{links.map((link, index) => (
+					<Link href={`/${link.toLowerCase()}`} key={index}>
+						<a>{link}</a>
+					</Link>
+				))}
+			</div>
 		</header>
 	)
 }
