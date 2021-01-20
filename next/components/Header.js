@@ -11,10 +11,10 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 
 	// removes fade-out class on page load to prevent FOUC
 	const loaded = useRef(null)
-	useLayoutEffect(() => {
-		loaded.current.classList.add('has-fade')
-		loaded.current.classList.remove('fade-out')
-	}, [loaded])
+	// useLayoutEffect(() => {
+	// 	loaded.current.classList.add('has-fade')
+	// 	loaded.current.classList.remove('fade-out')
+	// }, [loaded])
 
 	useEffect(() => {
 		loaded.current.classList.add('has-fade')
