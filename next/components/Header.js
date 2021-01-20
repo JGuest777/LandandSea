@@ -65,7 +65,11 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 				</div>
 			</nav>
 
-			<div className={`header__menu ${toggleMenu && 'fade-in'}`}>
+			<div
+				className={`header__menu ${
+					toggleMenu ? 'fade-in' : 'fade-out'
+				} hide-desktop`}
+			>
 				{links.map((link, index) => (
 					<Link href={`/${link.toLowerCase()}`} key={index}>
 						<a>{link}</a>
