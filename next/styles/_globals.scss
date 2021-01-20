@@ -2,95 +2,94 @@
 
 html,
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 div {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-  font-size: 100%;
-  box-sizing: border-box;
+	font-size: 100%;
+	box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  line-height: 1rem;
-  letter-spacing: 0.05rem;
-  font-family: 'Roboto', sans-serif;
-  font-size: $font-med;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	line-height: 1rem;
+	letter-spacing: 0.05rem;
+	font-family: 'Roboto', sans-serif;
+	font-size: $font-med;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 a,
 a:visited,
 a:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-// Push wrapper for sticky footer
-#__next {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+	text-decoration: none;
+	color: inherit;
 }
 
 .content {
-  height: 100%;
-  flex: 1 0 auto;
+	min-height: calc(100vh - 200px);
 }
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .container {
-  height: calc(100% - 200px); //*considers height of footer
+	min-height: 100vh;
+	position: relative;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(blue, transparent);
+	animation: fade-in 200ms ease-in-out forwards;
+}
 
-  &.overlay {
-    &.overlay::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background-image: linear-gradient($logoBlue, transparent);
-    }
-  }
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 // Visibility
 .hide-mobile {
-  @include breakpoint-down(medium) {
-    display: none;
-  }
+	@include breakpoint-down(medium) {
+		display: none;
+	}
 }
 
 .hide-desktop {
-  @include breakpoint-up(large) {
-    display: none;
-  }
+	@include breakpoint-up(large) {
+		display: none;
+	}
 }
 
 //Media @ 640px, 1024px, 1400px
 @media (max-width: 640px) {
-  html {
-    font-size: 115%;
-  }
+	html {
+		font-size: 115%;
+	}
 }
 
 @media (max-width: 1024px) {
-  html {
-    font-size: 105%;
-  }
+	html {
+		font-size: 105%;
+	}
 }
