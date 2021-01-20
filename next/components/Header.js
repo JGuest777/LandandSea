@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -8,6 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Header({ toggleOverlay, setToggleOverlay }) {
 	const links = ['About', 'Buy', 'Sell', 'Contact']
 	const [toggleMenu, setToggleMenu] = useState(false)
+
+	// removes fade-out class on page load to prevent FOUC
+	const loaded = useRef(null)
+	useLayoutEffect(() => {
+		loaded.current.classList.add('has-fade')
+		loaded.current.classList.remove('fade-out')
+	}, [loaded])
 
 	const handleToggleMenu = () => {
 		setToggleMenu(!toggleMenu)
@@ -65,9 +72,8 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 				</div>
 			</nav>
 			<div
-				className={`header__menu hide-desktop ${
-					toggleMenu ? 'fade-in' : 'fade-out'
-				}`}
+				ref={loaded}
+				className={`header__menu ${toggleMenu ? 'fade-in' : 'fade-out'}`}
 			>
 				{links.map((link, index) => (
 					<Link href={`/${link.toLowerCase()}`} key={index}>

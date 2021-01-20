@@ -5,10 +5,10 @@ import { useState, useEffect, useRef } from 'react'
 export default function MainLayout({ children }) {
 	const [toggleOverlay, setToggleOverlay] = useState(false)
 
-	// sets visibility 'hidden' for overlay div on page load to prevent FOUC
+	// removes overlay class on page load to prevent FOUC
 	const loaded = useRef(null)
 	useEffect(() => {
-		loaded.current.classList.add('has-fade')
+		loaded.current.classList.remove('overlay')
 	}, [loaded])
 
 	return (
