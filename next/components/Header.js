@@ -16,6 +16,11 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 		loaded.current.classList.remove('fade-out')
 	}, [loaded])
 
+	useEffect(() => {
+		loaded.current.classList.add('has-fade')
+		loaded.current.classList.remove('fade-out')
+	}, [loaded])
+
 	const handleToggleMenu = () => {
 		setToggleMenu(!toggleMenu)
 		setToggleOverlay(!toggleOverlay)
