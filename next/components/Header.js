@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useTransition, animated } from 'react-spring'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Menu from '../lib/Menu'
@@ -10,12 +9,6 @@ import Menu from '../lib/Menu'
 export default function Header({ toggleOverlay, setToggleOverlay }) {
 	const links = ['About', 'Buy', 'Sell', 'Contact']
 	const [toggleMenu, setToggleMenu] = useState(false)
-	const transitions = useTransition(toggleMenu, null, {
-		from: { opacity: 0 },
-		enter: { opacity: 1 },
-		leave: { opacity: 0 },
-		config: { duration: 200 }
-	})
 
 	const handleToggleMenu = () => {
 		setToggleMenu(!toggleMenu)
@@ -72,14 +65,7 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 					</div>
 				))}
 			</nav>
-			{transitions.map(
-				({ item, key, props }) =>
-					item && (
-						<animated.div key={key} style={props}>
-							<Menu links={links} />
-						</animated.div>
-					)
-			)}
+			<Menu toggleMenu={toggleMenu} links={links} />
 		</header>
 	)
 }
