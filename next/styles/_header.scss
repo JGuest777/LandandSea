@@ -43,7 +43,6 @@
 	}
 
 	&__menu {
-		visibility: hidden;
 		position: absolute;
 		width: calc(100% - 3rem);
 		left: 50%;
@@ -108,14 +107,4 @@
 			color: $logoBlue;
 		}
 	}
-}
-
-.overlay {
-	visibility: hidden;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background-image: linear-gradient($logoBlue, transparent);
 }

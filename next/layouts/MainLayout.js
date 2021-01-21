@@ -1,13 +1,14 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useState } from 'react'
+import Overlay from '../lib/overlay'
 
 export default function MainLayout({ children }) {
 	const [toggleOverlay, setToggleOverlay] = useState(false)
 
 	return (
 		<>
-			<div className={`overlay ${toggleOverlay ? 'fade-in' : 'fade-out'}`} />
+			<Overlay toggleOverlay={toggleOverlay} />
 			<div className='content'>
 				<Header
 					toggleOverlay={toggleOverlay}

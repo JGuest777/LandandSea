@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useTransition, animated } from 'react-spring'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Menu from '../lib/Menu'
 
 // TODO: Nav (About, Buy, Sell, Contact)
 // TODO: Direct link to: Phone / Email (icons)
@@ -8,6 +10,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Header({ toggleOverlay, setToggleOverlay }) {
 	const links = ['About', 'Buy', 'Sell', 'Contact']
 	const [toggleMenu, setToggleMenu] = useState(false)
+	const transitions = useTransition(toggleMenu, null, {
+		from: { opacity: 0 },
+		enter: { opacity: 1 },
+		leave: { opacity: 0 },
+		config: { duration: 200 }
+	})
 
 	const handleToggleMenu = () => {
 		setToggleMenu(!toggleMenu)
@@ -56,26 +64,22 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 					</a>
 				</div>
 				{/* Desktop */}
-				<div className='header__links hide-mobile'>
-					{links.map((link, index) => (
+				{links.map((link, index) => (
+					<div className='header__links hide-mobile'>
 						<Link href={`/${link.toLowerCase()}`} key={index}>
 							<a>{link}</a>
 						</Link>
-					))}
-				</div>
-			</nav>
-
-			<div
-				className={`header__menu ${
-					toggleMenu ? 'fade-in' : 'fade-out'
-				} hide-desktop`}
-			>
-				{links.map((link, index) => (
-					<Link href={`/${link.toLowerCase()}`} key={index}>
-						<a>{link}</a>
-					</Link>
+					</div>
 				))}
-			</div>
+			</nav>
+			{transitions.map(
+				({ item, key, props }) =>
+					item && (
+						<animated.div key={key} style={props}>
+							<Menu links={links} />
+						</animated.div>
+					)
+			)}
 		</header>
 	)
 }
