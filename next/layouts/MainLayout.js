@@ -1,7 +1,7 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useState } from 'react'
-import Overlay from '../lib/overlay'
+import Overlay from './Overlay'
 
 export default function MainLayout({ children }) {
 	const [toggleOverlay, setToggleOverlay] = useState(false)

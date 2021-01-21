@@ -13,14 +13,12 @@ export default function Menu({ toggleMenu, links }) {
 	return transitions.map(
 		({ item, key, props }) =>
 			item && (
-				<animated.div key={key} style={props}>
-					<div className='header__menu'>
-						{links.map((link) => (
-							<Link href={`/${link.toLowerCase()}`} key={uuidv4()}>
-								<a>{link}</a>
-							</Link>
-						))}
-					</div>
+				<animated.div key={key} style={props} className='header__menu'>
+					{links.map((link) => (
+						<Link href={`/${link.toLowerCase()}`} key={uuidv4()}>
+							<a>{link}</a>
+						</Link>
+					))}
 				</animated.div>
 			)
 	)

@@ -2,10 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
 import SubMenu from './SubMenu'
-import Menu from '../lib/Menu'
-
-// TODO: Nav (About, Buy, Sell, Contact)
-// TODO: Direct link to: Phone / Email (icons)
+import Menu from './Menu'
 
 export default function Header({ toggleOverlay, setToggleOverlay }) {
 	const links = ['About', 'Buy', 'Sell', 'Contact']
@@ -25,16 +22,14 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 				</Link>
 				<SubMenu />
 				{/* Mobile Burger Menu */}
-				<div className='header__burger hide-desktop'>
-					<a
-						onClick={handleToggleMenu}
-						className={`header__burger-link ${toggleMenu && 'open'}`}
-					>
-						<span></span>
-						<span></span>
-						<span></span>
-					</a>
-				</div>
+				<a
+					onClick={handleToggleMenu}
+					className={`header__burger ${toggleMenu && 'open'} hide-desktop`}
+				>
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
 				{/* Desktop Links */}
 				<div className='header__links hide-mobile'>
 					{links.map((link) => (

@@ -7,13 +7,14 @@
 		align-items: flex-end;
 		padding: 0.5rem 7% 1rem 7%;
 	}
-	&__logo {
-		img {
-		}
-	}
 
-	&__burger-link {
-		transition: all ease-in-out 200ms;
+	// &__logo {
+	// 	img {
+	// 	}
+	// }
+
+	&__burger {
+		transition: all 200ms ease-in-out;
 		> span {
 			display: block;
 			height: 2px;
@@ -37,8 +38,11 @@
 				transform: rotate(-45deg);
 			}
 		}
+
 		&:hover {
 			cursor: pointer;
+			color: $logoBlue;
+			transform: scale(1.1);
 		}
 	}
 
