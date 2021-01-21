@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { v4 as uuidv4 } from 'uuid'
+import SubMenu from './SubMenu'
 import Menu from '../lib/Menu'
 
 // TODO: Nav (About, Buy, Sell, Contact)
@@ -22,29 +23,7 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 						<img src={require('../public/images/logo-black_sm.png')} />
 					</a>
 				</Link>
-
-				<div className='header__submenu'>
-					{/* Desktop contact  */}
-					<div className='header__submenu-desktop'>
-						<a href='tel:+13214272948' className='hide-mobile'>
-							<FontAwesomeIcon
-								className='header__icons'
-								icon='phone'
-								size='sm'
-							/>
-						</a>
-						<span className='hide-mobile'>(321) 427-2948</span>
-					</div>
-					{/* Mobile contact */}
-					<div className='header__submenu-mobile'>
-						<a href='tel:+13214272948' className='hide-desktop'>
-							<FontAwesomeIcon className='header__icons' icon='mobile-alt' />
-						</a>
-						<a href='mailto:barbara@remax.net' className='hide-desktop'>
-							<FontAwesomeIcon className='header__icons' icon='envelope' />
-						</a>
-					</div>
-				</div>
+				<SubMenu />
 				{/* Mobile Burger Menu */}
 				<div className='header__burger hide-desktop'>
 					<a
@@ -56,14 +35,14 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 						<span></span>
 					</a>
 				</div>
-				{/* Desktop */}
-				{links.map((link, index) => (
-					<div className='header__links hide-mobile'>
-						<Link href={`/${link.toLowerCase()}`} key={index}>
+				{/* Desktop Links */}
+				<div className='header__links hide-mobile'>
+					{links.map((link) => (
+						<Link href={`/${link.toLowerCase()}`} key={uuidv4()}>
 							<a>{link}</a>
 						</Link>
-					</div>
-				))}
+					))}
+				</div>
 			</nav>
 			<Menu toggleMenu={toggleMenu} links={links} />
 		</header>
