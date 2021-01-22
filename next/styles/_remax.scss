@@ -1,15 +1,24 @@
 .remax {
+	background-color: $lightGlass;
+	backdrop-filter: blur(5px);
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 0.5rem;
+	width: 100%;
+	padding: 0.5rem;
 
-	> p {
-		font-size: $font-sm;
+	> span {
+		font-size: $font-xs;
+		color: #000;
+		&:first-child {
+			margin-right: 0.4rem;
+		}
+		&:last-child {
+			margin-left: 0.4rem;
+		}
 	}
 
 	> img {
-		max-width: 5rem;
+		max-width: 4.5rem;
 	}
 }

@@ -6,7 +6,6 @@
 
 	&__mobile {
 		> a {
-			font-size: $font-sm;
 			&:first-child {
 				margin-right: 1.5rem;
 			}
@@ -17,13 +16,23 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-size: $font-sm;
+		transition: all 200ms ease-in-out;
+
+		> p {
+			font-size: $font-sm;
+		}
 		> a:first-child {
 			margin-right: 0.5rem;
+		}
+
+		&:hover {
+			cursor: pointer;
+			color: $logoBlue;
 		}
 	}
 
 	&__icons {
+		font-size: $font-sm;
 		transition: all 200ms ease-in-out;
 
 		&:hover {
