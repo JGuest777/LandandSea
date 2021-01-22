@@ -40,13 +40,13 @@ a:hover {
 // Visibility
 .hide-mobile {
 	@include breakpoint-down(medium) {
-		display: none;
+		display: none !important;
 	}
 }
 
 .hide-desktop {
 	@include breakpoint-up(large) {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -55,8 +55,11 @@ a:hover {
 	.header {
 		&__logo {
 			img {
-				max-width: 8.125rem;
+				max-width: 7rem;
 			}
+		}
+		> nav {
+			margin-right: 1rem;
 		}
 	}
 }

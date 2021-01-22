@@ -1,0 +1,34 @@
+.submenu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+
+	&__mobile {
+		> a {
+			font-size: $font-sm;
+			&:first-child {
+				margin-right: 1.5rem;
+			}
+		}
+	}
+
+	&__desktop {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: $font-sm;
+		> a:first-child {
+			margin-right: 0.5rem;
+		}
+	}
+
+	&__icons {
+		transition: all 200ms ease-in-out;
+
+		&:hover {
+			cursor: pointer;
+			color: $logoBlue;
+		}
+	}
+}

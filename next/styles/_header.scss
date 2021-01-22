@@ -5,7 +5,8 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
-		padding: 0.5rem 7% 1rem 7%;
+		margin: 1rem 2.5rem;
+		position: relative;
 	}
 
 	&__burger {
@@ -59,13 +60,6 @@
 		}
 	}
 
-	&__submenu {
-		position: absolute;
-		top: 0;
-		right: 0;
-		margin: 0.5rem;
-	}
-
 	&__links {
 		a {
 			font-size: $font-lg;
@@ -78,16 +72,6 @@
 				cursor: pointer;
 				color: $logoBlue;
 			}
-		}
-	}
-
-	&__icons {
-		margin: 0.5rem;
-		transition: all 200ms ease-in-out;
-
-		&:hover {
-			cursor: pointer;
-			color: $logoBlue;
 		}
 	}
 }
