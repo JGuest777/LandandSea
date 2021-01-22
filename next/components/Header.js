@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
 import SubMenu from './SubMenu'
+import Remax from './Remax'
 import Menu from './Menu'
 
 export default function Header({ toggleOverlay, setToggleOverlay }) {
@@ -17,7 +18,7 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 			<nav>
 				<Link href='/'>
 					<a className='header__logo'>
-						<img src={require('../public/images/logo-black_sm.png')} />
+						<img src={require('../public/images/logo-white_sm.png')} />
 					</a>
 				</Link>
 				<SubMenu />
@@ -39,6 +40,7 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 					))}
 				</div>
 			</nav>
+			<Remax />
 			<Menu toggleMenu={toggleMenu} links={links} />
 		</header>
 	)

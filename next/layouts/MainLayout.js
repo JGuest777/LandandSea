@@ -2,7 +2,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useState } from 'react'
 import Overlay from './Overlay'
-import Remax from '../components/Remax'
 
 export default function MainLayout({ children }) {
 	const [toggleOverlay, setToggleOverlay] = useState(false)
@@ -15,7 +14,6 @@ export default function MainLayout({ children }) {
 					toggleOverlay={toggleOverlay}
 					setToggleOverlay={setToggleOverlay}
 				/>
-				<Remax />
 				<div>{children}</div>
 			</div>
 			<Footer />

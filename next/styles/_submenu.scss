@@ -3,6 +3,7 @@
 	top: 0;
 	right: 0;
 	display: flex;
+	margin-right: 1rem;
 
 	&__mobile {
 		> a {
@@ -19,6 +20,7 @@
 		transition: all 200ms ease-in-out;
 
 		> p {
+			color: #fff;
 			font-size: $font-sm;
 		}
 		> a:first-child {
@@ -32,6 +34,7 @@
 	}
 
 	&__icons {
+		color: #fff;
 		font-size: $font-sm;
 		transition: all 200ms ease-in-out;
 

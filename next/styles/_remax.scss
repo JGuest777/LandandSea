@@ -1,11 +1,10 @@
 .remax {
-	background-color: $lightGlass;
-	backdrop-filter: blur(5px);
+	background-color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	padding: 0.5rem;
+	padding: 0.25rem;
 
 	> span {
 		font-size: $font-xs;

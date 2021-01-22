@@ -1,12 +1,12 @@
 .header {
-	background-color: $lightGlass;
-	backdrop-filter: blur(5px);
+	background-color: $logoBlue;
+	padding-top: 1rem;
 	nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
-		margin: 1rem 2.25rem;
 		position: relative;
+		padding: 0 2rem 1rem 2rem;
 	}
 
 	&__burger {
@@ -15,7 +15,7 @@
 			display: block;
 			height: 2px;
 			width: 26px;
-			background-color: black;
+			background-color: #fff;
 			transition: all 260ms ease-in-out;
 			transform-origin: 3px 1.5px;
 
@@ -44,24 +44,28 @@
 
 	&__menu {
 		position: absolute;
-		width: calc(100% - 3rem);
+		margin-top: 0.5rem;
+		min-width: calc(100% - 2rem);
 		left: 50%;
-		transform: translate(-50%);
-		background-color: #fff;
-		margin-top: 1rem;
+		transform: translateX(-50%);
+		background-color: rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(5px);
 		padding: 1.625rem;
 		border-radius: 3px;
 
 		a {
 			display: block;
-			padding: 0.625rem;
-			color: #000;
+			width: 100%;
+			padding: 0.75rem;
+			color: #fff;
+			font-size: $font-lg;
 			text-align: center;
 		}
 	}
 
 	&__links {
 		a {
+			color: #fff;
 			font-size: $font-lg;
 			transition: all 200ms ease-in-out;
 
