@@ -8,11 +8,6 @@
 		padding: 0.5rem 7% 1rem 7%;
 	}
 
-	// &__logo {
-	// 	img {
-	// 	}
-	// }
-
 	&__burger {
 		transition: all 200ms ease-in-out;
 		> span {
@@ -68,24 +63,7 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		padding-top: 0.65rem;
-		margin-right: 2.7%;
-
-		&__submenu-mobile {
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		&__submenu-desktop {
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
-			&:hover {
-				color: $logoBlue;
-				cursor: pointer;
-			}
-		}
+		margin: 0.5rem;
 	}
 
 	&__links {
@@ -97,13 +75,14 @@
 				margin-right: 4rem;
 			}
 			&:hover {
+				cursor: pointer;
 				color: $logoBlue;
 			}
 		}
 	}
 
 	&__icons {
-		margin: 0 1rem;
+		margin: 0.5rem;
 		transition: all 200ms ease-in-out;
 
 		&:hover {

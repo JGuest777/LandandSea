@@ -1,0 +1,15 @@
+.remax {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0.5rem;
+
+	> p {
+		font-size: $font-sm;
+	}
+
+	> img {
+		max-width: 5rem;
+	}
+}

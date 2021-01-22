@@ -52,13 +52,11 @@ a:hover {
 
 //Media @ 640px, 1024px, 1400px
 @media (max-width: 640px) {
-	html {
-		font-size: 115%;
-	}
-}
-
-@media (max-width: 1024px) {
-	html {
-		font-size: 105%;
+	.header {
+		&__logo {
+			img {
+				max-width: 8.125rem;
+			}
+		}
 	}
 }
