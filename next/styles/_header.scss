@@ -10,35 +10,41 @@
 	}
 
 	&__burger {
-		transition: all 200ms ease-in-out;
-		> span {
-			display: block;
-			height: 2px;
-			width: 26px;
+		cursor: pointer;
+		border: none;
+		background-color: transparent;
+		> div {
+			border: 1.75px solid #fff;
+			width: 36px;
 			background-color: #fff;
-			transition: all 260ms ease-in-out;
+			transition: all 200ms ease-in-out;
 			transform-origin: 3px 1.5px;
 
 			&:not(:last-child) {
-				margin-bottom: 5px;
+				margin-bottom: 7px;
 			}
 		}
 		&.open {
-			> span:first-child {
+			> div:first-child {
 				transform: rotate(45deg);
 			}
-			> span:nth-child(2) {
+			> div:nth-child(2) {
 				opacity: 0;
 			}
-			> span:last-child {
+			> div:last-child {
 				transform: rotate(-45deg);
 			}
 		}
 
-		&:hover {
+		&:hover > div {
+			box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 			cursor: pointer;
-			color: $logoBlue;
-			transform: scale(1.1);
+			transform: scale(1.07);
+		}
+
+		&:focus,
+		:active {
+			outline: 0px;
 		}
 	}
 

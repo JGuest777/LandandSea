@@ -12,7 +12,7 @@ export default function Overlay({ toggleOverlay }) {
 		({ item, key, props }) =>
 			item && (
 				<>
-					<animated.div key={key} style={props} className='overlay-container' />
+					<animated.div key={key} style={props} className='overlay' />
 				</>
 			)
 	)

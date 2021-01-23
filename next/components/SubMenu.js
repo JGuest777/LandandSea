@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function SubMenu() {
 	return (
 		<div className='submenu'>
+			{/* Mobile */}
 			<div className='submenu__mobile hide-desktop'>
 				<a href='tel:+13214272948'>
 					<FontAwesomeIcon className='submenu__icons' icon='mobile-alt' />
@@ -11,12 +12,11 @@ export default function SubMenu() {
 					<FontAwesomeIcon className='submenu__icons' icon='envelope' />
 				</a>
 			</div>
-			<div className='submenu__desktop hide-mobile'>
-				<a href='tel:+13214272948' id='desktop-phone'>
-					<FontAwesomeIcon className='submenu__icons' icon='phone' />
-				</a>
-				<p>(321) 427-2948</p>
-			</div>
+			{/* Desktop */}
+			<a href='tel:+13214272948' className='submenu__desktop hide-mobile'>
+				<FontAwesomeIcon className='submenu__icons' icon='phone' /> (321)
+				427-2948
+			</a>
 		</div>
 	)
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
 import SubMenu from './SubMenu'
@@ -8,11 +8,13 @@ import Menu from './Menu'
 export default function Header({ toggleOverlay, setToggleOverlay }) {
 	const links = ['About', 'Buy', 'Sell', 'Contact']
 	const [toggleMenu, setToggleMenu] = useState(false)
+	// const menuRef = useRef(null)
 
 	const handleToggleMenu = () => {
 		setToggleMenu(!toggleMenu)
 		setToggleOverlay(!toggleOverlay)
 	}
+
 	return (
 		<header className='header'>
 			<nav>
@@ -23,14 +25,15 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 				</Link>
 				<SubMenu />
 				{/* Mobile Burger Menu */}
-				<a
+				<button
 					onClick={handleToggleMenu}
 					className={`header__burger ${toggleMenu && 'open'} hide-desktop`}
 				>
-					<span></span>
-					<span></span>
-					<span></span>
-				</a>
+					<div />
+					<div />
+					<div />
+				</button>
+
 				{/* Desktop Links */}
 				<div className='header__links hide-mobile'>
 					{links.map((link) => (
@@ -41,7 +44,13 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 				</div>
 			</nav>
 			<Remax />
-			<Menu toggleMenu={toggleMenu} links={links} />
+
+			<Menu
+				links={links}
+				toggleMenu={toggleMenu}
+				setToggleMenu={setToggleMenu}
+				setToggleOverlay={setToggleOverlay}
+			/>
 		</header>
 	)
 }

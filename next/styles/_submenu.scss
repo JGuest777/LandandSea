@@ -14,18 +14,10 @@
 	}
 
 	&__desktop {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		margin-right: 1rem;
+		color: #fff;
+		font-size: $font-sm;
 		transition: all 200ms ease-in-out;
-
-		> p {
-			color: #fff;
-			font-size: $font-sm;
-		}
-		> a:first-child {
-			margin-right: 0.5rem;
-		}
 
 		&:hover {
 			cursor: pointer;
