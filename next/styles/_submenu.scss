@@ -3,7 +3,7 @@
 	top: 0;
 	right: 0;
 	display: flex;
-	margin-right: 1rem;
+	margin-right: 2rem;
 
 	&__mobile {
 		> a {
@@ -14,7 +14,6 @@
 	}
 
 	&__desktop {
-		margin-right: 1rem;
 		color: #fff;
 		font-size: $font-sm;
 		transition: all 200ms ease-in-out;

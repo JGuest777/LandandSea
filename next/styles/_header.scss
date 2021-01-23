@@ -6,7 +6,7 @@
 		justify-content: space-between;
 		align-items: flex-end;
 		position: relative;
-		padding: 0 2rem 1rem 2rem;
+		padding: 0 2rem 2rem 2rem;
 	}
 
 	&__burger {
@@ -14,8 +14,8 @@
 		border: none;
 		background-color: transparent;
 		> div {
-			border: 1.75px solid #fff;
-			width: 36px;
+			border: 1.5px solid #fff;
+			width: 32px;
 			background-color: #fff;
 			transition: all 200ms ease-in-out;
 			transform-origin: 3px 1.5px;
