@@ -7,6 +7,16 @@
 		align-items: flex-end;
 		position: relative;
 		padding: 0 2rem 2rem 2rem;
+
+		img {
+			transition: all 200ms ease-in-out;
+			&:hover {
+				transform: scale(1.01);
+			}
+			&:active {
+				transform: scale(0.99);
+			}
+		}
 	}
 
 	&__burger {
@@ -39,12 +49,15 @@
 		&:hover > div {
 			box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 			cursor: pointer;
-			transform: scale(1.07);
+			width: 34px;
 		}
 
-		&:focus,
-		:active {
+		&:focus {
 			outline: 0px;
+		}
+
+		&:active {
+			transform: scale(0.9);
 		}
 	}
 
@@ -69,18 +82,26 @@
 		}
 	}
 
-	&__links {
+	&__nav {
 		a {
+			display: inline-block;
 			color: #fff;
-			font-size: $font-lg;
-			transition: all 200ms ease-in-out;
+			font-size: $font-xl;
+			text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7);
+			transition: all 100ms ease-in-out;
 
 			&:not(:last-child) {
 				margin-right: 4rem;
 			}
+
 			&:hover {
 				cursor: pointer;
-				color: $logoBlue;
+				transform: scale(1.02);
+				text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.5);
+			}
+
+			&:active {
+				transform: scale(0.99);
 			}
 		}
 	}

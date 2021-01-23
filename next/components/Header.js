@@ -35,7 +35,7 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 				</button>
 
 				{/* Desktop Links */}
-				<div className='header__links hide-mobile'>
+				<div className='header__nav hide-mobile'>
 					{links.map((link) => (
 						<Link href={`/${link.toLowerCase()}`} key={uuidv4()}>
 							<a>{link}</a>
@@ -45,12 +45,7 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 			</nav>
 			<Remax />
 
-			<Menu
-				links={links}
-				toggleMenu={toggleMenu}
-				setToggleMenu={setToggleMenu}
-				setToggleOverlay={setToggleOverlay}
-			/>
+			<Menu links={links} toggleMenu={toggleMenu} />
 		</header>
 	)
 }
