@@ -72,15 +72,18 @@
 		a {
 			display: block;
 			width: 100%;
-			padding: 0.75rem;
+			padding: 1rem;
 			color: #fff;
-			font-size: $font-lg;
+			text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7);
+			font-size: $font-xl;
 			text-align: center;
 			border-radius: 3px;
 			transition: all 200ms ease-in-out;
 
-			&:hover {
-				font-size: $font-xl;
+			&:hover,
+			:active {
+				font-size: $font-xxl;
+				text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.5);
 				background-color: lighten(#0b44598e, $amount: 10%);
 			}
 		}
