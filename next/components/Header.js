@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useTransition, animated } from 'react-spring'
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
 import SubMenu from './SubMenu'
@@ -8,7 +9,17 @@ import Menu from './Menu'
 export default function Header({ toggleOverlay, setToggleOverlay }) {
 	const links = ['About', 'Buy', 'Sell', 'Contact']
 	const [toggleMenu, setToggleMenu] = useState(false)
-	// const menuRef = useRef(null)
+	const menuRef = useRef(null)
+
+	// useEffect(() => {}, [])
+	console.log(menuRef.current)
+
+	const transitions = useTransition(toggleMenu, null, {
+		from: { opacity: 0 },
+		enter: { opacity: 1 },
+		leave: { opacity: 0 },
+		config: { duration: 200 }
+	})
 
 	const handleToggleMenu = () => {
 		setToggleMenu(!toggleMenu)
@@ -44,8 +55,14 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
 				</div>
 			</nav>
 			<Remax />
-
-			<Menu links={links} toggleMenu={toggleMenu} />
+			{transitions.map(
+				({ item, key, props }) =>
+					item && (
+						<animated.div key={key} style={props} className='header__menu'>
+							<Menu ref={menuRef} links={links} toggleMenu={toggleMenu} />
+						</animated.div>
+					)
+			)}
 		</header>
 	)
 }

@@ -23,7 +23,9 @@
 		cursor: pointer;
 		border: none;
 		background-color: transparent;
+
 		> div {
+			box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 			border: 1.5px solid #fff;
 			width: 32px;
 			background-color: #fff;
@@ -47,17 +49,12 @@
 		}
 
 		&:hover > div {
-			box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 			cursor: pointer;
-			width: 34px;
+			width: 36px;
 		}
 
 		&:focus {
 			outline: 0px;
-		}
-
-		&:active {
-			transform: scale(0.9);
 		}
 	}
 
@@ -79,6 +76,13 @@
 			color: #fff;
 			font-size: $font-lg;
 			text-align: center;
+			border-radius: 3px;
+			transition: all 200ms ease-in-out;
+
+			&:hover {
+				font-size: $font-xl;
+				background-color: lighten(#0b44598e, $amount: 10%);
+			}
 		}
 	}
 
