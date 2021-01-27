@@ -30,7 +30,7 @@
       width: 32px;
       background-color: #fff;
       transition: all 200ms ease-in-out;
-      transform-origin: 2px 1.5px;
+      transform-origin: 2px 2px;
 
       &:not(:last-child) {
         margin-bottom: 7px;
@@ -50,7 +50,6 @@
 
     &:hover > div {
       cursor: pointer;
-      // width: 36px;
     }
 
     &:focus {

@@ -51,6 +51,7 @@ export default function Header({ toggleOverlay, setToggleOverlay }) {
         </div>
       </nav>
       <Remax />
+
       {transitions.map(
         ({ item, key, props }) =>
           item && (

@@ -1,5 +1,4 @@
 <!-- TODO:  -->
-<!-- Mobile menu - handle outside click / esc button -->
 <!-- Mobile menu - trigger :active on touch? -->
 <!-- Nav links - Hover underline keyframe animation -->
 
