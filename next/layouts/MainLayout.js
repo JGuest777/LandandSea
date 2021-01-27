@@ -6,6 +6,7 @@ import Overlay from './Overlay';
 export default function MainLayout({ children }) {
   const [toggleOverlay, setToggleOverlay] = useState(false);
 
+  // Sets body overflox to hidden when overlay is present
   useEffect(() => {
     if (toggleOverlay) {
       document.querySelector('body').classList.add('no-scroll');
