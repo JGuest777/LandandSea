@@ -33,11 +33,11 @@ function Menu({ classes, links, toggleMenu, setToggleMenu, setToggleOverlay }) {
 		(link) =>
 			link && (
 				<div style={{ textAlign: 'center' }}>
-					<Link href={`/${link.toLowerCase()}`} key={uuidv4()}>
-						<Button size='large' className={classes.button}>
+					<Button size='large' className={classes.button}>
+						<Link href={`/${link.toLowerCase()}`} key={uuidv4()}>
 							{link}
-						</Button>
-					</Link>
+						</Link>
+					</Button>
 				</div>
 			)
 	)
