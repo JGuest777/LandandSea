@@ -10,9 +10,6 @@
 
 		img {
 			transition: all 200ms ease-in-out;
-			&:hover {
-				transform: scale(1.01);
-			}
 			&:active {
 				transform: scale(0.99);
 			}
