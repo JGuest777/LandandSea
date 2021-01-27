@@ -1,115 +1,115 @@
 .header {
-	background-color: $logoBlue;
-	padding-top: 1rem;
-	nav {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		position: relative;
-		padding: 0 2rem 2rem 2rem;
+  background-color: $logoBlue;
+  padding-top: 1rem;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    padding: 0 2rem 2rem 2rem;
 
-		img {
-			transition: all 200ms ease-in-out;
-			&:hover {
-				transform: scale(1.01);
-			}
-			&:active {
-				transform: scale(0.99);
-			}
-		}
-	}
+    img {
+      transition: all 200ms ease-in-out;
+      &:hover {
+        transform: scale(1.01);
+      }
+      &:active {
+        transform: scale(0.99);
+      }
+    }
+  }
 
-	&__burger {
-		cursor: pointer;
-		border: none;
-		background-color: transparent;
+  &__burger {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 
-		> div {
-			box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
-			border: 1.5px solid #fff;
-			width: 32px;
-			background-color: #fff;
-			transition: all 200ms ease-in-out;
-			transform-origin: 3px 1.5px;
+    > div {
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+      border: 1.5px solid #fff;
+      width: 32px;
+      background-color: #fff;
+      transition: all 200ms ease-in-out;
+      transform-origin: 2px 1.5px;
 
-			&:not(:last-child) {
-				margin-bottom: 7px;
-			}
-		}
-		&.open {
-			> div:first-child {
-				transform: rotate(45deg);
-			}
-			> div:nth-child(2) {
-				opacity: 0;
-			}
-			> div:last-child {
-				transform: rotate(-45deg);
-			}
-		}
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+    &.open {
+      > div:first-child {
+        transform: rotate(45deg);
+      }
+      > div:nth-child(2) {
+        opacity: 0;
+      }
+      > div:last-child {
+        transform: rotate(-45deg);
+      }
+    }
 
-		&:hover > div {
-			cursor: pointer;
-			width: 36px;
-		}
+    &:hover > div {
+      cursor: pointer;
+      // width: 36px;
+    }
 
-		&:focus {
-			outline: 0px;
-		}
-	}
+    &:focus {
+      outline: 0px;
+    }
+  }
 
-	&__menu {
-		position: absolute;
-		margin-top: 0.5rem;
-		min-width: calc(100% - 2rem);
-		left: 50%;
-		transform: translateX(-50%);
-		background-color: rgba(255, 255, 255, 0.5);
-		backdrop-filter: blur(5px);
-		padding: 1.625rem;
-		border-radius: 3px;
+  &__menu {
+    position: absolute;
+    margin-top: 0.5rem;
+    min-width: calc(100% - 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 1.625rem;
+    border-radius: 3px;
 
-		a {
-			display: block;
-			width: 100%;
-			padding: 1rem;
-			color: #fff;
-			text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7);
-			font-size: $font-xl;
-			text-align: center;
-			border-radius: 3px;
-			transition: all 200ms ease-in-out;
+    a {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      color: #fff;
+      text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7);
+      font-size: $font-xl;
+      text-align: center;
+      border-radius: 3px;
+      transition: all 200ms ease-in-out;
 
-			&:hover,
-			:active {
-				font-size: $font-xxl;
-				text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.5);
-				background-color: lighten(#0b44598e, $amount: 10%);
-			}
-		}
-	}
+      &:hover,
+      :active {
+        font-size: $font-xxl;
+        text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.5);
+        background-color: lighten(#0b44598e, $amount: 10%);
+      }
+    }
+  }
 
-	&__nav {
-		a {
-			display: inline-block;
-			color: #fff;
-			font-size: $font-xl;
-			text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7);
-			transition: all 100ms ease-in-out;
+  &__nav {
+    a {
+      display: inline-block;
+      color: #fff;
+      font-size: $font-xl;
+      text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7);
+      transition: all 100ms ease-in-out;
 
-			&:not(:last-child) {
-				margin-right: 4rem;
-			}
+      &:not(:last-child) {
+        margin-right: 4rem;
+      }
 
-			&:hover {
-				cursor: pointer;
-				transform: scale(1.02);
-				text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.5);
-			}
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+        text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.5);
+      }
 
-			&:active {
-				transform: scale(0.99);
-			}
-		}
-	}
+      &:active {
+        transform: scale(0.99);
+      }
+    }
+  }
 }
